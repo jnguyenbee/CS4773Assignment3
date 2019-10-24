@@ -38,7 +38,9 @@ public class Test {
 					i.activate();
 					break;
 				case "SELECT":
-					shape = drawingList.get(Integer.parseInt(parseCommand[1]));
+					// todo: error check the index
+						shape = drawingList.get(Integer.parseInt(parseCommand[1]) -1);
+					// todo: check for no values
 					break;
 				case "MOVE":
 					MoveCommand move = new MoveCommand(shape,Integer.parseInt(parseCommand[1]), Integer.parseInt(parseCommand[2]));
@@ -51,7 +53,9 @@ public class Test {
 					i.activate();
 					break;
 				case "COLOR":
-					ColorCommand color = new ColorCommand(shape,(Color)Color.class.getField(parseCommand[1].toUpperCase()).get(null));
+					// todo:[c] is one of the following valid colors:
+					// Red, Blue, Yellow, Orange, Green
+					ColorCommand color = new ColorCommand(shape,parseCommand[1]);
 					i = new Invoker(color);
 					i.activate();
 					break;
@@ -62,6 +66,7 @@ public class Test {
 					break;
 			}
 		}
-		
+
+
 	 }
 }
