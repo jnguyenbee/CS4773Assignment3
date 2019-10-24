@@ -1,5 +1,7 @@
 package Commands;
 
+import Shape.Shape;
+
 public class CreateCommand implements Command{
 		Shape theShape;
 		int dimension;

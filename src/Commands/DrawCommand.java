@@ -2,6 +2,8 @@ package Commands;
 
 import java.util.ArrayList;
 
+import Shape.Shape;
+
 public class DrawCommand implements Command{
 	Shape theShape;
 

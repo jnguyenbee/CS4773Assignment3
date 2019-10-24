@@ -1,5 +1,7 @@
 package Commands;
 
+import Shape.Shape;
+
 public class MoveCommand  implements Command{
 	Shape theShape;
 	int x;

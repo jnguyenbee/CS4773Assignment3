@@ -11,7 +11,8 @@ import Commands.CreateCommand;
 import Commands.DeleteCommand;
 import Commands.DrawCommand;
 import Commands.MoveCommand;
-import Commands.Shape;
+import Shape.Shape;
+import Shape.ShapeMachine;
 
 public class Test {
 	private static Shape shape;
@@ -19,7 +20,7 @@ public class Test {
 	public static void main(String[] args) throws Exception{
 		 ArrayList<Shape> drawingList = new ArrayList<Shape>();
 		 Invoker i;
-		 File file = new File("C:\\Users\\Bee-PC\\eclipse-workspace\\CS4773Assignment03\\src\\commandTest.txt");
+		 File file = new File("./src/commandTest.txt");
 		 BufferedReader br = new BufferedReader(new FileReader(file));
 
 
