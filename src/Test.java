@@ -11,8 +11,7 @@ import Commands.CreateCommand;
 import Commands.DeleteCommand;
 import Commands.DrawCommand;
 import Commands.MoveCommand;
-import Shape.Shape;
-import Shape.ShapeMachine;
+import Commands.Shape;
 
 public class Test {
 	private static Shape shape;
@@ -20,9 +19,8 @@ public class Test {
 	public static void main(String[] args) throws Exception{
 		 ArrayList<Shape> drawingList = new ArrayList<Shape>();
 		 Invoker i;
-		 File file = new File("./src/commandTest.txt");
+		 File file = new File("C:\\Users\\Bee-PC\\eclipse-workspace\\CS4773Assignment03\\src\\commandTest.txt");
 		 BufferedReader br = new BufferedReader(new FileReader(file));
-
 
 		String line;
 		String [] parseCommand;
@@ -53,7 +51,7 @@ public class Test {
 					i.activate();
 					break;
 				case "COLOR":
-					ColorCommand color = new ColorCommand(shape,Color.getColor(parseCommand[1]));
+					ColorCommand color = new ColorCommand(shape,(Color)Color.class.getField(parseCommand[1].toUpperCase()).get(null));
 					i = new Invoker(color);
 					i.activate();
 					break;
@@ -64,7 +62,6 @@ public class Test {
 					break;
 			}
 		}
-
-
+		
 	 }
 }
