@@ -1,4 +1,4 @@
-import Commands.Shape;
+package Shape;
 public class ShapeMachine {
 
 	public static Shape getShape(String shape)

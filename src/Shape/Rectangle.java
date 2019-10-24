@@ -1,7 +1,6 @@
+package Shape;
 import java.awt.Color;
 import java.util.ArrayList;
-
-import Commands.Shape;
 
 public class Rectangle implements Shape{
 	private Color color;

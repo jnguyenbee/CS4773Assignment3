@@ -2,6 +2,8 @@ package Commands;
 
 import java.util.ArrayList;
 
+import Shape.Shape;
+
 public class DeleteCommand implements Command{
 
 	Shape deleteShape;
