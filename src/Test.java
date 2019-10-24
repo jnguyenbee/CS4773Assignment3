@@ -19,14 +19,14 @@ public class Test {
 		 Invoker i;
 		 File file = new File("C:\\Users\\Bee-PC\\eclipse-workspace\\CS4773Assignment03\\src\\commandTest.txt");
 		 BufferedReader br = new BufferedReader(new FileReader(file));
-		 
-		 
+
+
 		String line;
 		String [] parseCommand;
 		while((line = br.readLine())!= null)
 		{
 			parseCommand = line.split(" ");
-			
+
 			switch(parseCommand[0])
 			{
 				case "CREATE": //todo: create needs to fix both circle and rectangle
@@ -37,7 +37,7 @@ public class Test {
 					i.activate();
 					break;
 				case "SELECT":
-					System.out.println(line);
+					shape = drawingList.get(Integer.parseInt(parseCommand[1]));
 					break;
 				case "MOVE":
 					MoveCommand move = new MoveCommand(shape,Integer.parseInt(parseCommand[1]), Integer.parseInt(parseCommand[2]));
@@ -59,25 +59,7 @@ public class Test {
 					break;
 			}
 		}
-	
-	/*	 
-		 Shape newShape = new Circle();
-		 Shape newShape2 = new Circle();
-		 drawingList.add(newShape);
-		 //drawingList.add(newShape2);
-		 
-		 CreateCommand create = new CreateCommand(newShape, 10);
-		 //CreateCommand create2 = new CreateCommand(newShape2, 20);
-		 Invoker i = new Invoker(create);
-		 i.activate();
-		 
-		 DrawCommand draw = new DrawCommand(newShape);
-		 Invoker i2 = new Invoker(draw);
-		 i2.activate();
-		 
-		 DeleteCommand delete = new DeleteCommand(newShape, drawingList);
-		 Invoker i3 = new Invoker(delete);
-		 i3.activate();
-		 */
+
+
 	 }
 }
