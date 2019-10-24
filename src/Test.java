@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -5,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import Commands.ColorCommand;
 import Commands.CreateCommand;
 import Commands.DeleteCommand;
 import Commands.DrawCommand;
@@ -50,7 +52,9 @@ public class Test {
 					i.activate();
 					break;
 				case "COLOR":
-					System.out.println(line);
+					ColorCommand color = new ColorCommand(shape,Color.getColor(parseCommand[1]));
+					i = new Invoker(color);
+					i.activate();
 					break;
 				case "DELETE":
 					DeleteCommand delete = new DeleteCommand(shape, drawingList);

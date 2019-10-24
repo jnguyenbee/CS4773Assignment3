@@ -5,13 +5,13 @@ import java.util.ArrayList;
 
 public interface Shape {
 
-	
+
 	public void draw(Shape shape);
-	
+
 	public void color(Color color);
-	
+
 	public void delete(Shape shape, ArrayList<Shape> drawingList);
-	
+
 	public void undo();
 
 	public void move(int x, int y);
