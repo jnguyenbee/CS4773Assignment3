@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import Builder.ShapeMachine;
+import Builder.ShapePlan;
 import Commands.ColorCommand;
 import Commands.CreateCommand;
 import Commands.DeleteCommand;
@@ -14,10 +16,10 @@ import Commands.MoveCommand;
 import Commands.Shape;
 
 public class Test {
-	private static Shape shape;
+	private static ShapePlan shape;
 
 	public static void main(String[] args) throws Exception{
-		 ArrayList<Shape> drawingList = new ArrayList<Shape>();
+		 ArrayList<ShapePlan> drawingList = new ArrayList<ShapePlan>();
 		 Invoker i;
 		 File file = new File("C:\\Users\\Bee-PC\\eclipse-workspace\\CS4773Assignment03\\src\\commandTest.txt");
 		 BufferedReader br = new BufferedReader(new FileReader(file));
