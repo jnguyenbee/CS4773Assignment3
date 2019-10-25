@@ -6,23 +6,23 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import Builder.ShapeMachine;
-import Builder.ShapePlan;
 import Commands.ColorCommand;
 import Commands.CreateCommand;
 import Commands.DeleteCommand;
 import Commands.DrawCommand;
 import Commands.MoveCommand;
-import Commands.Shape;
+import Shape.Shape;
+import Shape.ShapeMachine;
 
 public class Test {
-	private static ShapePlan shape;
+	private static Shape shape;
 
 	public static void main(String[] args) throws Exception{
-		 ArrayList<ShapePlan> drawingList = new ArrayList<ShapePlan>();
+		 ArrayList<Shape> drawingList = new ArrayList<Shape>();
 		 Invoker i;
-		 File file = new File("C:\\Users\\Bee-PC\\eclipse-workspace\\CS4773Assignment03\\src\\commandTest.txt");
+		 File file = new File("./src/commandTest.txt");
 		 BufferedReader br = new BufferedReader(new FileReader(file));
+
 
 		String line;
 		String [] parseCommand;
@@ -40,9 +40,7 @@ public class Test {
 					i.activate();
 					break;
 				case "SELECT":
-					// todo: error check the index
-						shape = drawingList.get(Integer.parseInt(parseCommand[1]) -1);
-					// todo: check for no values
+					shape = drawingList.get(Integer.parseInt(parseCommand[1]));
 					break;
 				case "MOVE":
 					MoveCommand move = new MoveCommand(shape,Integer.parseInt(parseCommand[1]), Integer.parseInt(parseCommand[2]));
@@ -55,9 +53,7 @@ public class Test {
 					i.activate();
 					break;
 				case "COLOR":
-					// todo:[c] is one of the following valid colors:
-					// Red, Blue, Yellow, Orange, Green
-					ColorCommand color = new ColorCommand(shape,parseCommand[1]);
+					ColorCommand color = new ColorCommand(shape,Color.getColor(parseCommand[1]));
 					i = new Invoker(color);
 					i.activate();
 					break;

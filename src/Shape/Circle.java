@@ -8,7 +8,7 @@ public class Circle implements Shape{
 	private int x;
 	private int y;
 	private String value;
-
+	
 	public Circle() {
 	}
 
@@ -21,7 +21,7 @@ public class Circle implements Shape{
 		this.setColor(Color.BLUE);
 		this.setValue("Circle");
 	}
-
+	
 	@Override
 	public void move(int x, int y)
 	{
@@ -33,7 +33,7 @@ public class Circle implements Shape{
 	@Override
 	public void draw(Shape shape) {
 		System.out.println("draw");
-			System.out.printf("%s, Color: %s, Origin: (%d, %d), Radius: %d\n",
+			System.out.printf("%s, Color: %s, Origin: (%d, %d), Radius: %d\n", 
 					this.getValue(),this.getColor(), this.getX(), this.getY(), this.getRadius());
 	}
 
@@ -41,7 +41,7 @@ public class Circle implements Shape{
 	public void color(Color color) {
 		System.out.println("color");
 		this.setColor(color);
-
+		
 	}
 
 	@Override
@@ -54,7 +54,7 @@ public class Circle implements Shape{
 				break;
 			}
 		}
-
+		
 		System.out.println("delete");
 		drawingList.remove(index);
 		//remove the shape from the drawinglist
@@ -64,7 +64,7 @@ public class Circle implements Shape{
 	@Override
 	public void undo() {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	public int getRadius() {
@@ -109,6 +109,6 @@ public class Circle implements Shape{
 
 	@Override
 	public void create(int width, int height) {
-
+		
 	}
 }

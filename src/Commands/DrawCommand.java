@@ -2,21 +2,21 @@ package Commands;
 
 import java.util.ArrayList;
 
-import Shape.Shape;
+import Builder.ShapePlan;
 
 public class DrawCommand implements Command{
-	Shape theShape;
+	ShapePlan theShape;
 
-	public DrawCommand (Shape newShape)
+	public DrawCommand (ShapePlan newShape)
 	{
 		this.theShape = newShape;
 	}
-	
+
 	public void execute()
 	{
 		theShape.draw(this.theShape);
 	}
-	
+
 	public void undo()
 	{
 		theShape.undo();
