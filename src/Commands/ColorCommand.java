@@ -5,7 +5,7 @@ import java.awt.Color;
 
 public class ColorCommand implements Command{
 
-	Shape theShape;
+	ShapePlan theShape;
 	Color color;
 	public ColorCommand (Shape newShape, String newColor)
 	{
