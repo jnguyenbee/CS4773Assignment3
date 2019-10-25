@@ -9,14 +9,6 @@ import Builder.ShapeEngineer;
 
 public abstract class ShapeCommand implements ShapeCommandInterface{
 	Shape shape;
-
-	public void create() {
-
-	}
-
-	public void draw() {
-		
-	}
 	
 	@Override
 	public void color(Color color) {
