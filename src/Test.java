@@ -28,7 +28,7 @@ public class Test {
 		 CommandInvoker circleCreateInvoker = new CommandInvoker(createC);
 		 circleCreateInvoker.activate();
 
-		 ColorCommand colorc = new ColorCommand(shapeTestC,Color.DARK_GRAY);
+		 ColorCommand colorc = new ColorCommand(shapeTestC,Color.GREEN);
 		 CommandInvoker circleColorInvoker = new CommandInvoker(colorc);
 		 circleColorInvoker.activate();
 
