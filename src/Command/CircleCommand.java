@@ -5,10 +5,11 @@ import java.awt.Color;
 import Builder.*;
 
 
-public class CircleCommand implements ShapeCommandInterface{
+public class CircleCommand extends ShapeCommand{
 
-	Shape shape;
+//	Shape shape;
 	private int radius;
+	
 	public CircleCommand(int radius) {
 		this.radius = radius;
 	}
@@ -29,34 +30,5 @@ public class CircleCommand implements ShapeCommandInterface{
 				this.shape.getColor(), this.shape.getX(), this.shape.getY(), this.shape.getRadius());
 	}
 
-	@Override
-	public void color(Color color) {
-		System.out.println("color");
-		if(Color.RED == color || Color.BLUE == color
-				|| Color.YELLOW == color || Color.ORANGE == color
-				|| Color.GREEN == color)
-			{
-				this.shape.setColor(color);
-			}
-	}
-
-	@Override
-	public void delete() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void undo() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void move(int x, int y) {
-		System.out.println("move");
-		this.shape.setX(x);
-		this.shape.setY(y);
-	}
 
 }
