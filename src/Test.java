@@ -13,6 +13,7 @@ import Commands.CreateCommand;
 import Commands.DeleteCommand;
 import Commands.DrawCommand;
 import Commands.MoveCommand;
+import Commands.Shape;
 
 public class Test {
 	private static ShapePlan shape;
@@ -20,9 +21,8 @@ public class Test {
 	public static void main(String[] args) throws Exception{
 		 ArrayList<ShapePlan> drawingList = new ArrayList<ShapePlan>();
 		 Invoker i;
-		 File file = new File("./src/commandTest.txt");
+		 File file = new File("C:\\Users\\Bee-PC\\eclipse-workspace\\CS4773Assignment03\\src\\commandTest.txt");
 		 BufferedReader br = new BufferedReader(new FileReader(file));
-
 
 		String line;
 		String [] parseCommand;
@@ -40,7 +40,9 @@ public class Test {
 					i.activate();
 					break;
 				case "SELECT":
-					shape = drawingList.get(Integer.parseInt(parseCommand[1]));
+					// todo: error check the index
+						shape = drawingList.get(Integer.parseInt(parseCommand[1]) -1);
+					// todo: check for no values
 					break;
 				case "MOVE":
 					MoveCommand move = new MoveCommand(shape,Integer.parseInt(parseCommand[1]), Integer.parseInt(parseCommand[2]));
@@ -53,7 +55,9 @@ public class Test {
 					i.activate();
 					break;
 				case "COLOR":
-					ColorCommand color = new ColorCommand(shape,Color.getColor(parseCommand[1]));
+					// todo:[c] is one of the following valid colors:
+					// Red, Blue, Yellow, Orange, Green
+					ColorCommand color = new ColorCommand(shape,parseCommand[1]);
 					i = new Invoker(color);
 					i.activate();
 					break;

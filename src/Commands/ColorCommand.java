@@ -2,16 +2,15 @@ package Commands;
 
 import java.awt.Color;
 
-import Builder.ShapePlan;
 
 public class ColorCommand implements Command{
 
 	ShapePlan theShape;
 	Color color;
-	public ColorCommand (ShapePlan newShape, Color newcolor)
+	public ColorCommand (Shape newShape, String newColor)
 	{
 		this.theShape = newShape;
-		this.color = newcolor;
+		this.color = getColor(newColor);
 	}
 
 	@Override
@@ -26,4 +25,25 @@ public class ColorCommand implements Command{
 
 	}
 
+	public Color getColor(String newColor)
+	{
+		String color = newColor.toUpperCase();
+		//Red, Blue, Yellow, Orange, Green
+		switch(color)
+		{
+			case "RED":
+				return Color.RED;
+			case "BLUE":
+				return Color.BLUE;
+			case "YELLOW":
+				return Color.YELLOW;
+			case "ORANGE":
+				return Color.ORANGE;
+			case "GREEN":
+				return Color.GREEN;
+			default:
+				System.err.print("Invalid Color");
+				return null;
+		}
+	}
 }
