@@ -2,8 +2,6 @@ package Command;
 
 import java.awt.Color;
 
-import Shape.ShapeCommandInterface;
-
 public class ColorCommand implements Command{
 
 	ShapeCommandInterface shape;

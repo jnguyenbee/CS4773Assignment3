@@ -12,6 +12,7 @@ import Command.CreateCommand;
 import Command.DrawCommand;
 import Command.RectangleCommand;
 import Command.ShapeCommandInterface;
+
 public class Test {
 
 	public static void main(String[] args) throws Exception{
@@ -30,6 +31,7 @@ public class Test {
 		 DrawCommand drawC = new DrawCommand(shapeTestC);
 		 CommandInvoker cD = new CommandInvoker(drawC);
 		 cD.activate();
+
 
 		 ShapeCommandInterface shapeTestR = new RectangleCommand(15,20);
 		 CreateCommand createR = new CreateCommand(shapeTestR);

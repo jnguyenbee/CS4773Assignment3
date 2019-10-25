@@ -2,8 +2,6 @@ package Command;
 
 import java.util.ArrayList;
 
-import Command.Command;
-
 public class CommandInvoker {
 	Command theCommand;
 	static ArrayList<Command> commandHistory = new ArrayList<Command>();

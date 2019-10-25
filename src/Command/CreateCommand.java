@@ -1,7 +1,5 @@
 package Command;
 
-import Shape.ShapeCommandInterface;
-
 public class CreateCommand implements Command{
 	ShapeCommandInterface shape;
 	public CreateCommand(ShapeCommandInterface shape)
