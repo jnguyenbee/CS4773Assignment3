@@ -14,13 +14,14 @@ import Command.DrawCommand;
 import Command.RectangleCommand;
 import Command.ShapeCommandInterface;
 public class Test {
-//This is test!
 	public static void main(String[] args) throws Exception{
 		// ArrayList<Shape> drawingList = new ArrayList<Shape>();
 	//	 Invoker i;
 		// File file = new File("./src/commandTest.txt");
 		// BufferedReader br = new BufferedReader(new FileReader(file));
 		 //ShapeCommandInterface circle = new Circle(10);
+		
+		//TEST!
 
 
 		 ShapeCommandInterface shapeTestC = new CircleCommand(25);
