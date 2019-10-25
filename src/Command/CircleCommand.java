@@ -15,7 +15,7 @@ public class CircleCommand implements ShapeCommandInterface{
 
 	@Override
 	public void create() {
-		System.out.println("draw");
+		System.out.println("create");
 		ShapeBuilder builder = new CircleBuilder(this.radius);
 		ShapeEngineer engineer = new ShapeEngineer(builder);
 		engineer.makeShape();
@@ -31,8 +31,13 @@ public class CircleCommand implements ShapeCommandInterface{
 
 	@Override
 	public void color(Color color) {
-		// TODO Auto-generated method stub
-		//this.shape.setColor(color);
+		System.out.println("color");
+		if(Color.RED == color || Color.BLUE == color
+				|| Color.YELLOW == color || Color.ORANGE == color
+				|| Color.GREEN == color)
+			{
+				this.shape.setColor(color);
+			}
 	}
 
 	@Override
@@ -50,7 +55,8 @@ public class CircleCommand implements ShapeCommandInterface{
 	@Override
 	public void move(int x, int y) {
 		System.out.println("move");
-
+		this.shape.setX(x);
+		this.shape.setY(y);
 	}
 
 }

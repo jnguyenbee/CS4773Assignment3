@@ -4,6 +4,7 @@ import java.awt.Color;
 
 public class ColorCommand implements Command{
 
+	//TODO: Check the color;
 	ShapeCommandInterface shape;
 	Color color;
 	public ColorCommand(ShapeCommandInterface shape, Color newColor) {
@@ -15,7 +16,6 @@ public class ColorCommand implements Command{
 	public void execute() {
 		shape.color(this.color);
 	}
-
 	@Override
 	public void undo() {
 		// TODO Create Undo.
