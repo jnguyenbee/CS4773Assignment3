@@ -1,8 +1,8 @@
 package Command;
 
-public class CreateCommand implements Command{
+public class DeleteCommand implements Command{
 
-	public CreateCommand() {
+	public DeleteCommand() {
 
 	}
 

@@ -52,7 +52,6 @@ public class RectangleBuilder implements ShapeBuilder {
 
 	@Override
 	public Shape getShape() {
-		// TODO Auto-generated method stub
 		return this.rectangle;
 	}
 }

@@ -19,7 +19,7 @@ public class Rectangle implements ShapeCommandInterface{
 	@Override
 	public void create() {
 		// TODO Auto-generated method stub
-			ShapeBuilder builder = new RectangleBuilder(this.radius);
+			ShapeBuilder builder = new RectangleBuilder(this.width, this.height);
 			ShapeEngineer engineer = new ShapeEngineer(builder);
 			engineer.makeShape();
 		  this.shape = engineer.getShape();

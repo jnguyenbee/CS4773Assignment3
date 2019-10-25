@@ -9,7 +9,7 @@ public class CircleBuilder implements ShapeBuilder {
 	public CircleBuilder(int radius)
 	{
 		this.radius = radius;
-		this.shape = new Shape();
+		this.circle = new Shape();
 	}
 
 	@Override
