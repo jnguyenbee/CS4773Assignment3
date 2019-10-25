@@ -16,5 +16,4 @@ public interface ShapeCommandInterface {
 
 	public void move();
 
-
 }

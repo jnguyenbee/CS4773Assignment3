@@ -6,23 +6,22 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/*
 import Commands.ColorCommand;
 import Commands.CreateCommand;
 import Commands.DeleteCommand;
 import Commands.DrawCommand;
-import Commands.MoveCommand;
-import Shape.Shape;
-import Shape.ShapeMachine;
+import Commands.MoveCommand;*/
 
+import Shape.*;
 public class Test {
-	private static Shape shape;
 
 	public static void main(String[] args) throws Exception{
 		// ArrayList<Shape> drawingList = new ArrayList<Shape>();
 	//	 Invoker i;
 		// File file = new File("./src/commandTest.txt");
 		// BufferedReader br = new BufferedReader(new FileReader(file));
-
+		 ShapeCommandInterface circle = new Circle(10);
      System.out.println("Running in Atom");
 		 //ShapeCommandInterface circle = new Circle(10);
     /*

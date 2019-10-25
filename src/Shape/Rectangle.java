@@ -2,11 +2,7 @@ package Shape;
 
 import java.awt.Color;
 
-import Builder.CircleBuilder;
-import Builder.Director;
-import Builder.RectangleBuilder;
-import Builder.Shape;
-import Builder.ShapeBuilder;
+import Builder.*;
 
 public class Rectangle implements ShapeCommandInterface{
 
@@ -22,10 +18,10 @@ public class Rectangle implements ShapeCommandInterface{
 	@Override
 	public void create() {
 		// TODO Auto-generated method stub
-		ShapeBuilder builder = new RectangleBuilder (this.width,this.height);
-		Director director = new Director(builder);
-		director.buildShape();
-		this.shape = director.getShape();
+			ShapeBuilder builder = new RectangleBuilder(this.radius);
+			ShapeEngineer engineer = new ShapeEngineer(builder);
+			engineer.makeShape();
+		  this.shape = engineer.getShape();
 	}
 
 	@Override
