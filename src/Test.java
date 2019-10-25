@@ -18,12 +18,14 @@ public class Test {
 	private static Shape shape;
 
 	public static void main(String[] args) throws Exception{
-		 ArrayList<Shape> drawingList = new ArrayList<Shape>();
-		 Invoker i;
-		 File file = new File("./src/commandTest.txt");
-		 BufferedReader br = new BufferedReader(new FileReader(file));
+		// ArrayList<Shape> drawingList = new ArrayList<Shape>();
+	//	 Invoker i;
+		// File file = new File("./src/commandTest.txt");
+		// BufferedReader br = new BufferedReader(new FileReader(file));
 
-
+     System.out.println("Running in Atom");
+		 //ShapeCommandInterface circle = new Circle(10);
+    /*
 		String line;
 		String [] parseCommand;
 		while((line = br.readLine())!= null)
@@ -64,6 +66,7 @@ public class Test {
 					break;
 			}
 		}
+		*/
 
 
 	 }
