@@ -1,118 +1,61 @@
 package Shape;
-import java.awt.Color;
-import java.util.ArrayList;
 
-public class Rectangle implements Shape{
-	private Color color;
-	private int w;
-	private int h;
-	private int x;
-	private int y;
-	private String value;
-	
-	public Rectangle() {
+import java.awt.Color;
+
+import Builder.CircleBuilder;
+import Builder.Director;
+import Builder.RectangleBuilder;
+import Builder.Shape;
+import Builder.ShapeBuilder;
+
+public class Rectangle implements ShapeCommandInterface{
+
+	Shape shape;
+	private int width;
+	private int height;
+	public Rectangle (Shape newShape,int width, int height) {
+		this.shape = newShape;
+		this.width = width;
+		this.height = height;
 	}
-	
+
 	@Override
-	public void create(int width, int height) {
-		this.setX(0);
-		this.setY(0);
-		this.setWidth(width);
-		this.setHeight(height);
-		this.setColor(Color.RED);
-		this.setValue("Rectangle");
-		
+	public void create() {
+		// TODO Auto-generated method stub
+		ShapeBuilder builder = new RectangleBuilder (this.width,this.height);
+		Director director = new Director(builder);
+		director.buildShape();
+		this.shape = director.getShape();
 	}
-	
+
 	@Override
-	public void draw(Shape shape) {
-		System.out.println("draw");
-	
-		System.out.printf("%s, Color: %s, Origin: (%d, %d), Width: %d, Height: %d\n", 
-				this.getValue(),this.getColor(), this.getX(), this.getY(), this.getWidth(), this.getHeight());
-		
+	public void draw() {
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
 	public void color(Color color) {
-		System.out.println("color");
-		this.setColor(color);
+		// TODO Auto-generated method stub
+		this.shape.setColor(color);
 	}
 
 	@Override
-	public void delete(Shape shape,	ArrayList<Shape> drawingList) {
-		System.out.println("delete");
-		
-		//remove the shape from the drawinglist
-		setValue("no shape");
+	public void delete() {
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
 	public void undo() {
-		
-	}
-
-	@Override
-	public void move(int x, int y) {
-		System.out.println("move");
-		setX(x);
-		setY(y);
-	}
-
-	@Override
-	public void create(int radius) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	public int getWidth() {
-		return w;
-	}
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
 
-	public void setWidth(int w) {
-		this.w = w;
 	}
-
-	public int getHeight() {
-		return h;
-	}
-
-	public void setHeight(int h) {
-		this.h = h;
-	}
-
-	public int getX() {
-		return x;
-	}
-
-	public void setX(int x) {
-		this.x = x;
-	}
-
-	public int getY() {
-		return y;
-	}
-
-	public void setY(int y) {
-		this.y = y;
-	}
-
-	public String getValue() {
-		return value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
-	}
-
-	public Color getColor() {
-		return color;
-	}
-
-	public void setColor(Color color) {
-		this.color = color;
-	}
-
-	
 
 }

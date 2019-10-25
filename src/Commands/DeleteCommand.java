@@ -1,25 +1,15 @@
-package Commands;
+package Command;
 
-import java.util.ArrayList;
+public class CreateCommand implements Command{
 
-import Builder.ShapePlan;
-
-public class DeleteCommand implements Command{
-
-	ShapePlan deleteShape;
-	ArrayList<ShapePlan> drawingList;
-
-	public DeleteCommand(ShapePlan shape, ArrayList<ShapePlan> newDrawingList)
-	{
-		this.drawingList = newDrawingList;
-		this.deleteShape = shape;
+	public CreateCommand() {
 
 	}
-	// Delete from the list.
+
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
-		deleteShape.delete(this.deleteShape,this.drawingList);
+
 	}
 
 	@Override

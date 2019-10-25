@@ -1,24 +1,21 @@
-package Commands;
-
-import java.util.ArrayList;
-
-import Builder.ShapePlan;
+package Command;
 
 public class DrawCommand implements Command{
-	ShapePlan theShape;
 
-	public DrawCommand (ShapePlan newShape)
-	{
-		this.theShape = newShape;
+	public DrawCommand() {
+
 	}
 
-	public void execute()
-	{
-		theShape.draw(this.theShape);
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+
 	}
 
-	public void undo()
-	{
-		theShape.undo();
+	@Override
+	public void undo() {
+		// TODO Auto-generated method stub
+
 	}
+
 }

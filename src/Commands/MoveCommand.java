@@ -1,25 +1,21 @@
-package Commands;
+package Command;
 
-import Builder.ShapePlan;
+public class MoveCommand implements Command{
 
-public class MoveCommand  implements Command{
-	ShapePlan theShape;
-	int x;
-	int y;
-	public MoveCommand (ShapePlan newShape, int newX, int newY)
-	{
-		this.theShape = newShape;
-		this.x = newX;
-		this.y = newY;
+	public MoveCommand() {
+
 	}
 
-	public void execute()
-	{
-		theShape.move(this.x, this.y);
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+
 	}
 
-	public void undo()
-	{
-		theShape.undo();
+	@Override
+	public void undo() {
+		// TODO Auto-generated method stub
+
 	}
+
 }
