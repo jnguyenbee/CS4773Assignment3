@@ -1,21 +1,21 @@
-package Shape;
+package Command;
 
 import java.awt.Color;
 
 import Builder.*;
 
 
-public class Circle implements ShapeCommandInterface{
+public class CircleCommand implements ShapeCommandInterface{
 
 	Shape shape;
 	private int radius;
-	public Circle(int radius) {
+	public CircleCommand(int radius) {
 		this.radius = radius;
 	}
 
 	@Override
 	public void create() {
-		// TODO Auto-generated method stub
+		System.out.println("draw");
 		ShapeBuilder builder = new CircleBuilder(this.radius);
 		ShapeEngineer engineer = new ShapeEngineer(builder);
 		engineer.makeShape();

@@ -1,4 +1,4 @@
-package Shape;
+package Command;
 
 import java.awt.Color;
 
@@ -14,6 +14,7 @@ public interface ShapeCommandInterface {
 
 	public void undo();
 
-	public void move();
+	public void move(int x, int y);
+
 
 }
