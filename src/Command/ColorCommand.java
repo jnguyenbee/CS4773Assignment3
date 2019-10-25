@@ -1,20 +1,26 @@
 package Command;
 
+import java.awt.Color;
+
+import Shape.ShapeCommandInterface;
+
 public class ColorCommand implements Command{
 
-	public ColorCommand() {
-
+	ShapeCommandInterface shape;
+	Color color;
+	public ColorCommand(ShapeCommandInterface shape, Color newColor) {
+		this.shape = shape;
+		this.color = newColor;
 	}
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
-
+		shape.color(this.color);
 	}
 
 	@Override
 	public void undo() {
-		// TODO Auto-generated method stub
+		// TODO Create Undo.
 
 	}
 }

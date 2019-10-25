@@ -18,7 +18,7 @@ public class Rectangle implements ShapeCommandInterface{
 
 	@Override
 	public void create() {
-		// TODO Auto-generated method stub
+		System.out.println("create");
 			ShapeBuilder builder = new RectangleBuilder(this.width, this.height);
 			ShapeEngineer engineer = new ShapeEngineer(builder);
 			engineer.makeShape();
@@ -27,7 +27,9 @@ public class Rectangle implements ShapeCommandInterface{
 
 	@Override
 	public void draw() {
-		// TODO Auto-generated method stub
+		System.out.println("draw");
+		System.out.printf("Rectangle, Color: %s, Origin: (%d, %d), Width: %d, Height: %d\n",
+			this.shape.getColor(), this.shape.getX(), this.shape.getY(), this.shape.getWidth(), this.shape.getHeight());
 
 	}
 
@@ -50,7 +52,7 @@ public class Rectangle implements ShapeCommandInterface{
 	}
 
 	@Override
-	public void move() {
+	public void move(int x, int y) {
 		// TODO Auto-generated method stub
 
 	}

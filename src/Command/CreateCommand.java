@@ -1,15 +1,17 @@
 package Command;
 
+import Shape.ShapeCommandInterface;
+
 public class CreateCommand implements Command{
-
-	public CreateCommand() {
-
+	ShapeCommandInterface shape;
+	public CreateCommand(ShapeCommandInterface shape)
+	{
+		this.shape = shape;
 	}
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
-
+		shape.create();
 	}
 
 	@Override

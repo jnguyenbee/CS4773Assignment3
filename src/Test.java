@@ -23,7 +23,7 @@ public class Test {
 		// File file = new File("./src/commandTest.txt");
 		// BufferedReader br = new BufferedReader(new FileReader(file));
 		 ShapeCommandInterface circle = new Circle(10);
-     System.out.println("Running in Atom");
+    
 		 //ShapeCommandInterface circle = new Circle(10);
     /*
 		String line;

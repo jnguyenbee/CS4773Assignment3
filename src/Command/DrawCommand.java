@@ -1,15 +1,17 @@
 package Command;
 
+import Shape.ShapeCommandInterface;
+
 public class DrawCommand implements Command{
 
-	public DrawCommand() {
-
+	ShapeCommandInterface shape;
+	public DrawCommand(ShapeCommandInterface shape) {
+		this.shape = shape;
 	}
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
-
+		shape.draw();
 	}
 
 	@Override

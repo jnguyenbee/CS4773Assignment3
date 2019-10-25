@@ -24,8 +24,9 @@ public class Circle implements ShapeCommandInterface{
 
 	@Override
 	public void draw() {
-		// TODO Auto-generated method stub
-
+		System.out.println("draw");
+		System.out.printf("Circle, Color: %s, Origin: (%d, %d), Radius: %d\n",
+				this.shape.getColor(), this.shape.getX(), this.shape.getY(), this.shape.getRadius());
 	}
 
 	@Override
@@ -47,8 +48,8 @@ public class Circle implements ShapeCommandInterface{
 	}
 
 	@Override
-	public void move() {
-		// TODO Auto-generated method stub
+	public void move(int x, int y) {
+		System.out.println("move");
 
 	}
 
