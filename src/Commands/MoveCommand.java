@@ -1,12 +1,12 @@
 package Commands;
 
-import Shape.Shape;
+import Builder.ShapePlan;
 
 public class MoveCommand  implements Command{
-	Shape theShape;
+	ShapePlan theShape;
 	int x;
 	int y;
-	public MoveCommand (Shape newShape, int newX, int newY)
+	public MoveCommand (ShapePlan newShape, int newX, int newY)
 	{
 		this.theShape = newShape;
 		this.x = newX;

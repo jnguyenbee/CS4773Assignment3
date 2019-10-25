@@ -1,13 +1,14 @@
 package Commands;
 
 import java.awt.Color;
-import Shape.Shape;
+
+import Builder.ShapePlan;
 
 public class ColorCommand implements Command{
 
-	Shape theShape;
+	ShapePlan theShape;
 	Color color;
-	public ColorCommand (Shape newShape, Color newcolor)
+	public ColorCommand (ShapePlan newShape, Color newcolor)
 	{
 		this.theShape = newShape;
 		this.color = newcolor;

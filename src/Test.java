@@ -6,19 +6,19 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import Builder.ShapeMachine;
+import Builder.ShapePlan;
 import Commands.ColorCommand;
 import Commands.CreateCommand;
 import Commands.DeleteCommand;
 import Commands.DrawCommand;
 import Commands.MoveCommand;
-import Shape.Shape;
-import Shape.ShapeMachine;
 
 public class Test {
-	private static Shape shape;
+	private static ShapePlan shape;
 
 	public static void main(String[] args) throws Exception{
-		 ArrayList<Shape> drawingList = new ArrayList<Shape>();
+		 ArrayList<ShapePlan> drawingList = new ArrayList<ShapePlan>();
 		 Invoker i;
 		 File file = new File("./src/commandTest.txt");
 		 BufferedReader br = new BufferedReader(new FileReader(file));

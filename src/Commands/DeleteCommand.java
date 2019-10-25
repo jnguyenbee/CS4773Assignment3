@@ -2,14 +2,14 @@ package Commands;
 
 import java.util.ArrayList;
 
-import Shape.Shape;
+import Builder.ShapePlan;
 
 public class DeleteCommand implements Command{
 
-	Shape deleteShape;
-	ArrayList<Shape> drawingList;
+	ShapePlan deleteShape;
+	ArrayList<ShapePlan> drawingList;
 	
-	public DeleteCommand(Shape shape, ArrayList<Shape> newDrawingList)
+	public DeleteCommand(ShapePlan shape, ArrayList<ShapePlan> newDrawingList)
 	{
 		this.drawingList = newDrawingList;
 		this.deleteShape = shape;
