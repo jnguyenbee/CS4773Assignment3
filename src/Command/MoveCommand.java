@@ -1,20 +1,23 @@
 package Command;
 
 public class MoveCommand implements Command{
-
-	public MoveCommand() {
-
+	ShapeCommandInterface shape;
+	private int x;
+	private int y;
+	public MoveCommand(ShapeCommandInterface shape, int x, int y) {
+		this.shape = shape;
+		this.x = x;
+		this.y = y;
 	}
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
-
+		shape.move(x, y);
 	}
 
 	@Override
 	public void undo() {
-		// TODO Auto-generated method stub
+
 
 	}
 

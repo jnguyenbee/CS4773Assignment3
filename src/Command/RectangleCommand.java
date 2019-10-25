@@ -35,7 +35,12 @@ public class RectangleCommand implements ShapeCommandInterface{
 	@Override
 	public void color(Color color) {
 		// TODO Auto-generated method stub
-		this.shape.setColor(color);
+		if(Color.RED == color || Color.BLUE == color
+				|| Color.YELLOW == color || Color.ORANGE == color
+				|| Color.GREEN == color)
+			{
+				this.shape.setColor(color);
+			}
 	}
 
 	@Override
@@ -52,7 +57,9 @@ public class RectangleCommand implements ShapeCommandInterface{
 
 	@Override
 	public void move(int x, int y) {
-		// TODO Auto-generated method stub
+		System.out.println("move");
+		this.shape.setX(x);
+		this.shape.setY(y);
 
 	}
 

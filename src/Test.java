@@ -7,12 +7,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import Command.CircleCommand;
+import Command.ColorCommand;
 import Command.CommandInvoker;
 import Command.CreateCommand;
 import Command.DrawCommand;
 import Command.RectangleCommand;
 import Command.ShapeCommandInterface;
-
 public class Test {
 
 	public static void main(String[] args) throws Exception{
@@ -25,13 +25,17 @@ public class Test {
 
 		 ShapeCommandInterface shapeTestC = new CircleCommand(25);
 		 CreateCommand createC = new CreateCommand(shapeTestC);
-		 CommandInvoker cI = new CommandInvoker(createC);
-		 cI.activate();
+		 CommandInvoker circleCreateInvoker = new CommandInvoker(createC);
+		 circleCreateInvoker.activate();
+
+		 ColorCommand colorc = new ColorCommand(shapeTestC,Color.DARK_GRAY);
+		 CommandInvoker circleColorInvoker = new CommandInvoker(colorc);
+		 circleColorInvoker.activate();
+
 
 		 DrawCommand drawC = new DrawCommand(shapeTestC);
 		 CommandInvoker cD = new CommandInvoker(drawC);
 		 cD.activate();
-
 
 		 ShapeCommandInterface shapeTestR = new RectangleCommand(15,20);
 		 CreateCommand createR = new CreateCommand(shapeTestR);
