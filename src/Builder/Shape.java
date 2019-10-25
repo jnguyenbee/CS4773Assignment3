@@ -3,7 +3,7 @@ package Builder;
 import java.awt.Color;
 import java.util.ArrayList;
 
-public class Shape implements ShapePlan	{
+public class Shape 	{
 	private Color color;
 	private int x;
 	private int y;
@@ -11,52 +11,7 @@ public class Shape implements ShapePlan	{
 	private int height;
 	private int width;
 	
-	@Override
-	public void draw() {
-		// TODO Auto-generated method stub
-		System.out.println("drawed");
-	}
 
-	@Override
-	public void color(Color color) {
-		// TODO Auto-generated method stub
-		this.color = color;
-	}
-
-	@Override
-	public void delete (ArrayList<ShapePlan> drawingList) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void undo() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void move(int x, int y) {
-		// TODO Auto-generated method stub
-		this.x = x;
-		this.y = y;
-	}
-
-	@Override
-	public void create(int radius) {
-		// TODO Auto-generated method stub
-		this.radius = radius;
-		
-	}
-
-	@Override
-	public void create(int width, int height) {
-		// TODO Auto-generated method stub
-		this.width = width;
-		this.height = height;
-		
-	}
-	
 	///////////////////////////////GETTER AND SETTER/////////////////////////////
 	public Color getColor() {
 		return color;
