@@ -6,6 +6,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import Command.CreateCommand;
+import Command.DrawCommand;
+
 /*
 import Commands.ColorCommand;
 import Commands.CreateCommand;
@@ -15,6 +18,7 @@ import Commands.MoveCommand;*/
 
 import Shape.ShapeCommandInterface;
 import Shape.Circle;
+import Shape.CommandInvoker;
 public class Test {
 
 	public static void main(String[] args) throws Exception{
@@ -22,8 +26,19 @@ public class Test {
 	//	 Invoker i;
 		// File file = new File("./src/commandTest.txt");
 		// BufferedReader br = new BufferedReader(new FileReader(file));
-		 ShapeCommandInterface circle = new Circle(10);
-    
+		 //ShapeCommandInterface circle = new Circle(10);
+		 System.out.println("Running in Atom");
+
+		 ShapeCommandInterface shapeTest = new Circle(10);
+		 CreateCommand create = new CreateCommand(shapeTest);
+		 CommandInvoker i = new CommandInvoker(create);
+		 i.activate();
+
+		 DrawCommand draw = new DrawCommand(shapeTest);
+		 CommandInvoker d = new CommandInvoker(draw);
+		 d.activate();
+
+
 		 //ShapeCommandInterface circle = new Circle(10);
     /*
 		String line;
