@@ -14,7 +14,7 @@ import Command.DrawCommand;
 import Command.RectangleCommand;
 import Command.ShapeCommandInterface;
 public class Test {
-
+//This is test!
 	public static void main(String[] args) throws Exception{
 		// ArrayList<Shape> drawingList = new ArrayList<Shape>();
 	//	 Invoker i;
