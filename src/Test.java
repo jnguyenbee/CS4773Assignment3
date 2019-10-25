@@ -13,7 +13,9 @@ import Commands.DeleteCommand;
 import Commands.DrawCommand;
 import Commands.MoveCommand;*/
 
-import Shape.*;
+import Shape.ShapeCommandInterface;
+import Shape.CircleBuilder;
+import Shape.Circle;
 public class Test {
 
 	public static void main(String[] args) throws Exception{

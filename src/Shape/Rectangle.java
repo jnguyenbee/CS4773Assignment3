@@ -9,6 +9,7 @@ public class Rectangle implements ShapeCommandInterface{
 	Shape shape;
 	private int width;
 	private int height;
+
 	public Rectangle (Shape newShape,int width, int height) {
 		this.shape = newShape;
 		this.width = width;
