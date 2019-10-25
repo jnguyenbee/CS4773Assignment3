@@ -6,24 +6,45 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import Commands.ColorCommand;
-import Commands.CreateCommand;
-import Commands.DeleteCommand;
-import Commands.DrawCommand;
-import Commands.MoveCommand;
-import Shape.Shape;
-import Shape.ShapeMachine;
+import Command.CircleCommand;
+import Command.CommandInvoker;
+import Command.CreateCommand;
+import Command.DrawCommand;
+import Command.RectangleCommand;
+import Command.ShapeCommandInterface;
 
 public class Test {
-	private static Shape shape;
 
 	public static void main(String[] args) throws Exception{
-		 ArrayList<Shape> drawingList = new ArrayList<Shape>();
-		 Invoker i;
-		 File file = new File("./src/commandTest.txt");
-		 BufferedReader br = new BufferedReader(new FileReader(file));
+		// ArrayList<Shape> drawingList = new ArrayList<Shape>();
+	//	 Invoker i;
+		// File file = new File("./src/commandTest.txt");
+		// BufferedReader br = new BufferedReader(new FileReader(file));
+		 //ShapeCommandInterface circle = new Circle(10);
 
 
+		 ShapeCommandInterface shapeTestC = new CircleCommand(25);
+		 CreateCommand createC = new CreateCommand(shapeTestC);
+		 CommandInvoker cI = new CommandInvoker(createC);
+		 cI.activate();
+
+		 DrawCommand drawC = new DrawCommand(shapeTestC);
+		 CommandInvoker cD = new CommandInvoker(drawC);
+		 cD.activate();
+
+
+		 ShapeCommandInterface shapeTestR = new RectangleCommand(15,20);
+		 CreateCommand createR = new CreateCommand(shapeTestR);
+		 CommandInvoker rI = new CommandInvoker(createR);
+		 rI.activate();
+
+		 DrawCommand drawR = new DrawCommand(shapeTestR);
+		 CommandInvoker rD = new CommandInvoker(drawR);
+		 rD.activate();
+
+
+		 //ShapeCommandInterface circle = new Circle(10);
+    /*
 		String line;
 		String [] parseCommand;
 		while((line = br.readLine())!= null)
@@ -64,6 +85,7 @@ public class Test {
 					break;
 			}
 		}
+		*/
 
 
 	 }
