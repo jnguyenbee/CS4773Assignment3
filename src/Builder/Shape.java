@@ -71,4 +71,9 @@ public class Shape 	{
 
 	}
 
+	public Shape getShape() {
+		// TODO Auto-generated method stub
+		return this;
+	}
+
 }

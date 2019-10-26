@@ -7,7 +7,6 @@ public class DeleteCommand implements Command{
 	ShapeCommandInterface shape;
 	public DeleteCommand(ShapeCommandInterface shape) {
 		this.shape = shape;
-
 	}
 
 	@Override
@@ -18,8 +17,6 @@ public class DeleteCommand implements Command{
 
 	@Override
 	public void undo() {
-		// TODO Auto-generated method stub
-
+		shape.getShape().setNoShape(Boolean.FALSE);
 	}
-
 }

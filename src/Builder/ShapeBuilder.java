@@ -18,5 +18,4 @@ public interface ShapeBuilder {
 
 	public Shape getShape();
 
-
 }

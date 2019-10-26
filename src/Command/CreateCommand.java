@@ -2,6 +2,7 @@ package Command;
 
 public class CreateCommand implements Command{
 	ShapeCommandInterface shape;
+	//private Boolean flag;
 	public CreateCommand(ShapeCommandInterface shape)
 	{
 		this.shape = shape;
@@ -14,8 +15,6 @@ public class CreateCommand implements Command{
 
 	@Override
 	public void undo() {
-		// TODO Auto-generated method stub
-
+		shape.getShape().setNoShape(Boolean.TRUE);
 	}
-
 }

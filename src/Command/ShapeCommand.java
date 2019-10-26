@@ -22,7 +22,6 @@ public abstract class ShapeCommand implements ShapeCommandInterface{
 
 	@Override
 	public void color(Color color) {
-		System.out.println("color");
 		if(Color.RED == color || Color.BLUE == color
 				|| Color.YELLOW == color || Color.ORANGE == color
 				|| Color.GREEN == color)
@@ -32,12 +31,20 @@ public abstract class ShapeCommand implements ShapeCommandInterface{
 
 	}
 
+
+	public Shape getShape()
+	{
+		return this.shape.getShape();
+	}
+
+
 	@Override
 	public void delete() {
 		// TODO Auto-generated method stub
 		this.shape.setNoShape(Boolean.TRUE);
 
 	}
+
 	public void select()
 	{
 		if(this.shape.getNoShape() == true)
@@ -49,13 +56,11 @@ public abstract class ShapeCommand implements ShapeCommandInterface{
 
 	@Override
 	public void undo() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void move(int x, int y) {
-		System.out.println("move");
 
 		this.shape.setX(x);
 		this.shape.setY(y);
