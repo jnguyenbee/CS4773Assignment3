@@ -13,20 +13,20 @@ public class Shape 	{
 	private int height;
 	private int width;
 	private Boolean noShape;
-	private HashMap<Color, String> colorMap = new HashMap<Color,String>();
+	private HashMap<Color, String> availableColors = new HashMap<Color,String>();
 
 	private void populateColors() {
-		colorMap.put(Color.BLUE, "BLUE");
-		colorMap.put(Color.RED, "RED");
-		colorMap.put(Color.YELLOW, "YELLOW");
-		colorMap.put(Color.ORANGE, "ORANGE");
-		colorMap.put(Color.GREEN, "GREEN");
+		availableColors.put(Color.BLUE, "BLUE");
+		availableColors.put(Color.RED, "RED");
+		availableColors.put(Color.YELLOW, "YELLOW");
+		availableColors.put(Color.ORANGE, "ORANGE");
+		availableColors.put(Color.GREEN, "GREEN");
 
 	}
 	///////////////////////////////GETTER AND SETTER/////////////////////////////
 	public String getColorString(Color color) {
 		populateColors();
-		return colorMap.get(color);
+		return availableColors.get(color);
 	}
 
 	public Color getColor() {

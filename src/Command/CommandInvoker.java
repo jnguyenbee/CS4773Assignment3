@@ -3,21 +3,21 @@ package Command;
 import java.util.ArrayList;
 
 public class CommandInvoker {
-	Command theCommand;
+	Command currentCommand;
 	static ArrayList<Command> commandHistory = new ArrayList<Command>();
 
 	public CommandInvoker (Command newCommand){
-		theCommand = newCommand;
-		commandHistory.add(theCommand);
+		currentCommand = newCommand;
+		commandHistory.add(currentCommand);
 	}
 
 	public void activate()
 	{
-		theCommand.execute();
+		currentCommand.execute();
 	}
 
 	public void undo()
 	{
-		theCommand.undo();
+		currentCommand.undo();
 	}
 }

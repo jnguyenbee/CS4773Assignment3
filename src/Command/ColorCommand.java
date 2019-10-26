@@ -7,17 +7,17 @@ public class ColorCommand implements Command{
 	//TODO: Check the color;
 	ShapeCommandInterface shape;
 	Color prevShapeColor;
-	Color color;
-	Color prevColor;
+	Color currentColor;
+	
 	public ColorCommand(ShapeCommandInterface shape, Color newColor) {
 		this.shape = shape;
-		this.color = newColor;
+		this.currentColor = newColor;
 		this.prevShapeColor = this.shape.getShape().getColor();
 	}
 
 	@Override
 	public void execute() {
-		shape.color(this.color);
+		shape.color(this.currentColor);
 	}
 
 	@Override

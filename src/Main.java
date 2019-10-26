@@ -23,19 +23,19 @@ public class Main {
 	public static void main(String[] args) throws Exception{
 
 		File file = new File("./src/commandTest.txt");
-		BufferedReader br = new BufferedReader(new FileReader(file));
+		BufferedReader readBuffer = new BufferedReader(new FileReader(file));
 		ShapeCommandInterface shape = null;
-		int flag = 0;
+		int outOfBoundSelectFlag = 0;
 		ArrayList<ShapeCommandInterface> shapeList = new ArrayList<ShapeCommandInterface>();
 		Stack<Command> commands = new Stack<Command>();
 		ArrayList<ShapeCommandInterface> selectCommandList = new ArrayList<ShapeCommandInterface>();
 
 		String line;
 		String [] parseCommand;
-		while((line = br.readLine())!= null)
+		while((line = readBuffer.readLine())!= null)
 		{
 			parseCommand = line.split(" ");
-			if(flag == 0 ||  parseCommand[0].equals("SELECT") || parseCommand[0].equals("DRAWSCENE")) {
+			if(outOfBoundSelectFlag == 0 ||  parseCommand[0].equals("SELECT") || parseCommand[0].equals("DRAWSCENE")) {
 
 			switch(parseCommand[0])
 			{
@@ -70,7 +70,7 @@ public class Main {
 						selectInvoker.activate();
 						commands.push(select);
 						selectCommandList.add(shape);
-						flag = 0;
+						outOfBoundSelectFlag = 0;
 					}
 					break;
 				case "MOVE":
@@ -112,7 +112,7 @@ public class Main {
 
 							if(previousSelectIndex == -1)
 							{
-								flag = 1;
+								outOfBoundSelectFlag = 1;
 							}else
 								shape = selectCommandList.get(previousSelectIndex);
 						}
