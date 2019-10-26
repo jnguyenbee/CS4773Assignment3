@@ -106,6 +106,12 @@ public class Test {
 					i.activate();
 					break;
 				*/
+				case "DRAWSCENE":
+					for(ShapeCommandInterface n : drawingList)
+					{
+						n.draw();
+					}
+					break;
 			}
 		}
 
