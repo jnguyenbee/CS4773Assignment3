@@ -28,6 +28,7 @@ public class Test {
 		 ShapeCommandInterface shape = null;
 		 ArrayList<ShapeCommandInterface> shapeList = new ArrayList<ShapeCommandInterface>();
 		 Stack<Command> commands = new Stack<Command>();
+		 ArrayList<ShapeCommandInterface> selectCommandList = new ArrayList<ShapeCommandInterface>();
 
 		String line;
 		String [] parseCommand;
@@ -66,6 +67,7 @@ public class Test {
 						CommandInvoker selectInvoker = new CommandInvoker(select);
 						selectInvoker.activate();
 						commands.push(select);
+						selectCommandList.add(shape);
 					}
 					break;
 				case "MOVE":
@@ -100,8 +102,21 @@ public class Test {
 				case "UNDO":
 					if (commands.peek() != null){
 						Command undo = commands.pop();
-						CommandInvoker undoInvoker = new CommandInvoker(undo);
-						undoInvoker.undo();
+						if(undo instanceof SelectCommand)
+						{
+							int previousSelectIndex = 0;
+							for(int i = 0; i < selectCommandList.size(); i++)
+							{
+								if(selectCommandList.get(i).equals(shape))
+									break;
+								previousSelectIndex = i;
+							}
+							shape = selectCommandList.get(previousSelectIndex);
+						}
+						else {
+							CommandInvoker undoInvoker = new CommandInvoker(undo);
+							undoInvoker.undo();
+						}
 					}
 					break;
 			}
