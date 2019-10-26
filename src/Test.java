@@ -10,25 +10,28 @@ import Command.CircleCommand;
 import Command.ColorCommand;
 import Command.CommandInvoker;
 import Command.CreateCommand;
+import Command.DeleteCommand;
 import Command.DrawCommand;
+import Command.MoveCommand;
 import Command.RectangleCommand;
 import Command.ShapeCommandInterface;
 public class Test {
 
 	public static void main(String[] args) throws Exception{
 		// ArrayList<Shape> drawingList = new ArrayList<Shape>();
-	//	 Invoker i;
-		// File file = new File("./src/commandTest.txt");
-		// BufferedReader br = new BufferedReader(new FileReader(file));
-		 //ShapeCommandInterface circle = new Circle(10);
+		// Invoker i;
+		 File file = new File("./src/commandTest.txt");
+		 BufferedReader br = new BufferedReader(new FileReader(file));
+		 ShapeCommandInterface shape = null;
+		 ArrayList<ShapeCommandInterface> drawingList = new ArrayList<ShapeCommandInterface>();
 
-
+/*
 		 ShapeCommandInterface shapeTestC = new CircleCommand(25);
 		 CreateCommand createC = new CreateCommand(shapeTestC);
 		 CommandInvoker circleCreateInvoker = new CommandInvoker(createC);
 		 circleCreateInvoker.activate();
 
-		 ColorCommand colorc = new ColorCommand(shapeTestC,Color.GREEN);
+		 ColorCommand colorc = new ColorCommand(shapeTestC,Color.YELLOW);
 		 CommandInvoker circleColorInvoker = new CommandInvoker(colorc);
 		 circleColorInvoker.activate();
 
@@ -45,51 +48,66 @@ public class Test {
 		 DrawCommand drawR = new DrawCommand(shapeTestR);
 		 CommandInvoker rD = new CommandInvoker(drawR);
 		 rD.activate();
-
-
-		 //ShapeCommandInterface circle = new Circle(10);
-    /*
+*/
 		String line;
 		String [] parseCommand;
 		while((line = br.readLine())!= null)
 		{
+			System.out.println("SIZE: " +drawingList.size());
 			parseCommand = line.split(" ");
-
 			switch(parseCommand[0])
 			{
 				case "CREATE": //todo: create needs to fix both circle and rectangle
-					shape = ShapeMachine.getShape(parseCommand[1]);
-					CreateCommand create = new CreateCommand(shape,Integer.parseInt(parseCommand[2]));
+
+					if(parseCommand[1].equals("CIRCLE")) {
+						ShapeCommandInterface shapeCircle = new CircleCommand(Integer.parseInt(parseCommand[2]));
+						CreateCommand createCircle = new CreateCommand(shapeCircle);
+						CommandInvoker circleCreateInvoker = new CommandInvoker(createCircle);
+						circleCreateInvoker.activate();
+
+						shape = shapeCircle;
+					}
+
+					if(parseCommand[1].equals("RECTANGLE")) {
+						 ShapeCommandInterface shapeRect = new RectangleCommand(Integer.parseInt(parseCommand[2]), Integer.parseInt(parseCommand[3]));
+						 CreateCommand createRect = new CreateCommand(shapeRect);
+						 CommandInvoker rectCreateInvoker = new CommandInvoker(createRect);
+						 rectCreateInvoker.activate();
+
+						 shape = shapeRect;
+					}
+
 					drawingList.add(shape);
-					i = new Invoker(create);
-					i.activate();
 					break;
 				case "SELECT":
-					shape = drawingList.get(Integer.parseInt(parseCommand[1]));
+					shape = drawingList.get(Integer.parseInt(parseCommand[1])-1);
 					break;
 				case "MOVE":
+					System.out.print(shape.toString());
 					MoveCommand move = new MoveCommand(shape,Integer.parseInt(parseCommand[1]), Integer.parseInt(parseCommand[2]));
-					i = new Invoker(move);
-					i.activate();
+					CommandInvoker moveInvoker = new CommandInvoker(move);
+					moveInvoker.activate();
+
 					break;
 				case "DRAW":
 					DrawCommand draw = new DrawCommand(shape);
-					i = new Invoker(draw);
-					i.activate();
+					CommandInvoker drawInvoker = new CommandInvoker(draw);
+					drawInvoker.activate();
 					break;
 				case "COLOR":
 					ColorCommand color = new ColorCommand(shape,Color.getColor(parseCommand[1]));
-					i = new Invoker(color);
-					i.activate();
+					CommandInvoker colorInvoker = new CommandInvoker(color);
+					colorInvoker.activate();
 					break;
+				/*
 				case "DELETE":
 					DeleteCommand delete = new DeleteCommand(shape, drawingList);
 					i = new Invoker(delete);
 					i.activate();
 					break;
+				*/
 			}
 		}
-		*/
 
 
 	 }
