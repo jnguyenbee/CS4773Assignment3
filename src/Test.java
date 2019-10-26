@@ -53,7 +53,6 @@ public class Test {
 		String [] parseCommand;
 		while((line = br.readLine())!= null)
 		{
-			System.out.println("SIZE: " +drawingList.size());
 			parseCommand = line.split(" ");
 			switch(parseCommand[0])
 			{
@@ -83,7 +82,6 @@ public class Test {
 					shape = drawingList.get(Integer.parseInt(parseCommand[1])-1);
 					break;
 				case "MOVE":
-					System.out.print(shape.toString());
 					MoveCommand move = new MoveCommand(shape,Integer.parseInt(parseCommand[1]), Integer.parseInt(parseCommand[2]));
 					CommandInvoker moveInvoker = new CommandInvoker(move);
 					moveInvoker.activate();
