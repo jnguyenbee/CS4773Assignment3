@@ -1,5 +1,9 @@
 package Command;
 
+import java.awt.Color;
+import java.util.HashMap;
+import java.util.Map;
+
 import Builder.Shape;
 
 public interface DrawStrategy {
@@ -12,10 +16,9 @@ class DrawCircleStrategy implements DrawStrategy {
 	public void draw(Shape shape) {
 		if(shape.getNoShape() != true){
 		System.out.printf("Circle, Color: %s, Origin: (%d, %d), Radius: %d\n",
-				shape.getColor(), shape.getX(), shape.getY(), shape.getRadius());
+				shape.getColorString(shape.getColor()), shape.getX(), shape.getY(), shape.getRadius());
 		}
 	}
-
 }
 
 class DrawRectangleStrategy implements DrawStrategy {
@@ -24,8 +27,7 @@ class DrawRectangleStrategy implements DrawStrategy {
 	public void draw(Shape shape) {
 			if(shape.getNoShape() != true){
 				System.out.printf("Rectangle, Color: %s, Origin: (%d, %d), Width: %d, Height: %d\n",
-				shape.getColor(), shape.getX(), shape.getY(), shape.getWidth(), shape.getHeight());
+				shape.getColorString(shape.getColor()), shape.getX(), shape.getY(), shape.getWidth(), shape.getHeight());
 		}
 	}
-
 }
