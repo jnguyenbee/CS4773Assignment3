@@ -7,9 +7,9 @@ import Builder.*;
 
 public class CircleCommand extends ShapeCommand{
 
-//	Shape shape;
+
 	private int radius;
-	
+
 	public CircleCommand(int radius) {
 		this.radius = radius;
 	}

@@ -10,7 +10,7 @@ public class Shape 	{
 	private int radius;
 	private int height;
 	private int width;
-	
+
 
 	///////////////////////////////GETTER AND SETTER/////////////////////////////
 	public Color getColor() {

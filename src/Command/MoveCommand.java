@@ -8,11 +8,12 @@ public class MoveCommand implements Command{
 		this.shape = shape;
 		this.x = x;
 		this.y = y;
+
 	}
 
 	@Override
 	public void execute() {
-		shape.move(x, y);
+		shape.move(this.x, this.y);
 	}
 
 	@Override
