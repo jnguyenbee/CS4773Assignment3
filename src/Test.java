@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
 import Command.CircleCommand;
 import Command.ColorCommand;
 import Command.CommandInvoker;
@@ -93,7 +94,8 @@ public class Test {
 					drawInvoker.activate();
 					break;
 				case "COLOR":
-					ColorCommand color = new ColorCommand(shape,Color.getColor(parseCommand[1]));
+					Color newColor  = (Color) Color.class.getField(parseCommand[1].toLowerCase()).get(null);
+					ColorCommand color = new ColorCommand(shape,newColor);
 					CommandInvoker colorInvoker = new CommandInvoker(color);
 					colorInvoker.activate();
 					break;
