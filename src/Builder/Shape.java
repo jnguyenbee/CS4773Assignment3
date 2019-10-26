@@ -14,21 +14,21 @@ public class Shape 	{
 	private int width;
 	private Boolean noShape;
 	private HashMap<Color, String> colorMap = new HashMap<Color,String>();
-	
+
 	private void populateColors() {
 		colorMap.put(Color.BLUE, "BLUE");
 		colorMap.put(Color.RED, "RED");
 		colorMap.put(Color.YELLOW, "YELLOW");
 		colorMap.put(Color.ORANGE, "ORANGE");
 		colorMap.put(Color.GREEN, "GREEN");
-		
+
 	}
 	///////////////////////////////GETTER AND SETTER/////////////////////////////
 	public String getColorString(Color color) {
 		populateColors();
 		return colorMap.get(color);
 	}
-	
+
 	public Color getColor() {
 		return color;
 	}
