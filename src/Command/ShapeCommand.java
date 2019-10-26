@@ -10,15 +10,14 @@ import Builder.ShapeEngineer;
 
 public abstract class ShapeCommand implements ShapeCommandInterface{
 	Shape shape;
-	public CreateStrategy createType;
-	public DrawStrategy drawType;
-	
-	public void create() {}
-	public void draw() {}
-	public void tryToDraw() {
-		drawType.draw(shape);
+
+	public void create() {
+
 	}
-	
+
+	public void draw() {
+
+	}
 
 	@Override
 	public void color(Color color) {
