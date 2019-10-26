@@ -13,7 +13,6 @@ public interface CreateStrategy {
 class CreateCircleStrategy implements CreateStrategy{
 	@Override
 	public Shape create(int firstDimension,int secondDimension) {
-		System.out.println("create");
 		ShapeBuilder builder = new CircleBuilder(firstDimension);
 		ShapeEngineer engineer = new ShapeEngineer(builder);
 		engineer.makeShape();
@@ -25,12 +24,10 @@ class CreateRectangleStrategy implements CreateStrategy{
 
 	@Override
 	public Shape create(int firstDimension, int secondDimension) {
-		System.out.println("create");
 		ShapeBuilder builder = new RectangleBuilder(firstDimension, secondDimension);
 		ShapeEngineer engineer = new ShapeEngineer(builder);
 		engineer.makeShape();
 		return engineer.getShape();
 	}
-	
-}
 
+}
