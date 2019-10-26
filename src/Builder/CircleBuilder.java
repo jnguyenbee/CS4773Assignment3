@@ -53,4 +53,10 @@ public class CircleBuilder implements ShapeBuilder {
 		return this.circle;
 	}
 
+	@Override
+	public void buildNoShape() {
+		circle.setNoShape(Boolean.FALSE);
+
+	}
+
 }

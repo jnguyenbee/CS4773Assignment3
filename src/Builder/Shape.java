@@ -10,7 +10,7 @@ public class Shape 	{
 	private int radius;
 	private int height;
 	private int width;
-
+	private Boolean noShape;
 
 	///////////////////////////////GETTER AND SETTER/////////////////////////////
 	public Color getColor() {
@@ -59,6 +59,16 @@ public class Shape 	{
 
 	public void setWidth(int width) {
 		this.width = width;
+	}
+
+	public void setNoShape(Boolean value) {
+		this.noShape = value;
+
+	}
+
+	public Boolean getNoShape() {
+		return noShape;
+
 	}
 
 }

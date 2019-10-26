@@ -51,7 +51,15 @@ public class RectangleBuilder implements ShapeBuilder {
 	}
 
 	@Override
+	public void buildNoShape() {
+		rectangle.setNoShape(Boolean.FALSE);
+
+	}
+
+	@Override
 	public Shape getShape() {
 		return this.rectangle;
 	}
+
+
 }

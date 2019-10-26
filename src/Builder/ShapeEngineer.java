@@ -20,5 +20,6 @@ public class ShapeEngineer {
 		this.shapeBuilder.buildRadius();
 		this.shapeBuilder.buildXCor();
 		this.shapeBuilder.buildYCor();
+		this.shapeBuilder.buildNoShape();
 	}
 }

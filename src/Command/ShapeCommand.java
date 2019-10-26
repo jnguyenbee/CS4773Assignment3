@@ -1,6 +1,7 @@
 package Command;
 
 import java.awt.Color;
+import java.util.ArrayList;
 
 import Builder.CircleBuilder;
 import Builder.Shape;
@@ -33,6 +34,15 @@ public abstract class ShapeCommand implements ShapeCommandInterface{
 	@Override
 	public void delete() {
 		// TODO Auto-generated method stub
+		this.shape.setNoShape(Boolean.TRUE);
+
+	}
+	public void select()
+	{
+		if(this.shape.getNoShape() == true)
+		{
+			System.out.println("ERROR: invalid shape for SELECT");
+		}
 
 	}
 
