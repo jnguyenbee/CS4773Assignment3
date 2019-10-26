@@ -16,18 +16,14 @@ public class RectangleCommand extends ShapeCommand{
 
 	@Override
 	public void create() {
-			ShapeBuilder builder = new RectangleBuilder(this.width, this.height);
-			ShapeEngineer engineer = new ShapeEngineer(builder);
-			engineer.makeShape();
-			this.shape = engineer.getShape();
+		createType = new CreateRectangleStrategy();
+		this.shape = createType.create(this.width,this.height);
 	}
 
 	@Override
 	public void draw() {
-		if(shape.getNoShape() != true) {
-		System.out.printf("Rectangle, Color: %s, Origin: (%d, %d), Width: %d, Height: %d\n",
-			this.shape.getColor(), this.shape.getX(), this.shape.getY(), this.shape.getWidth(), this.shape.getHeight());
-		}
+		drawType = new DrawRectangleStrategy();
+		tryToDraw();
 	}
 
 
