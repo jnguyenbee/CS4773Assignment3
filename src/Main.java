@@ -18,23 +18,25 @@ import Command.MoveCommand;
 import Command.RectangleCommand;
 import Command.SelectCommand;
 import Command.ShapeCommandInterface;
-public class Test {
+public class Main {
 
 	public static void main(String[] args) throws Exception{
-		// ArrayList<Shape> drawingList = new ArrayList<Shape>();
-		// Invoker i;
-		 File file = new File("./src/commandTest.txt");
-		 BufferedReader br = new BufferedReader(new FileReader(file));
-		 ShapeCommandInterface shape = null;
-		 ArrayList<ShapeCommandInterface> shapeList = new ArrayList<ShapeCommandInterface>();
-		 Stack<Command> commands = new Stack<Command>();
-		 ArrayList<ShapeCommandInterface> selectCommandList = new ArrayList<ShapeCommandInterface>();
+
+		File file = new File("./src/commandTest.txt");
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		ShapeCommandInterface shape = null;
+		int flag = 0;
+		ArrayList<ShapeCommandInterface> shapeList = new ArrayList<ShapeCommandInterface>();
+		Stack<Command> commands = new Stack<Command>();
+		ArrayList<ShapeCommandInterface> selectCommandList = new ArrayList<ShapeCommandInterface>();
 
 		String line;
 		String [] parseCommand;
 		while((line = br.readLine())!= null)
 		{
 			parseCommand = line.split(" ");
+			if(flag == 0 ||  parseCommand[0].equals("SELECT")) {
+
 			switch(parseCommand[0])
 			{
 				case "CREATE": //todo: create needs to fix both circle and rectangle
@@ -68,6 +70,7 @@ public class Test {
 						selectInvoker.activate();
 						commands.push(select);
 						selectCommandList.add(shape);
+						flag = 0;
 					}
 					break;
 				case "MOVE":
@@ -104,14 +107,14 @@ public class Test {
 						Command undo = commands.pop();
 						if(undo instanceof SelectCommand)
 						{
-							int previousSelectIndex = 0;
-							for(int i = 0; i < selectCommandList.size(); i++)
+							int index = selectCommandList.indexOf(shape);
+							int previousSelectIndex = index - 1;
+
+							if(previousSelectIndex == -1)
 							{
-								if(selectCommandList.get(i).equals(shape))
-									break;
-								previousSelectIndex = i;
-							}
-							shape = selectCommandList.get(previousSelectIndex);
+								flag = 1;
+							}else
+								shape = selectCommandList.get(previousSelectIndex);
 						}
 						else {
 							CommandInvoker undoInvoker = new CommandInvoker(undo);
@@ -120,6 +123,7 @@ public class Test {
 					}
 					break;
 			}
+		}
 		}
 	 }
 }
