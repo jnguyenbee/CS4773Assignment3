@@ -9,15 +9,15 @@ import Builder.ShapeEngineer;
 
 public abstract class ShapeCommand implements ShapeCommandInterface{
 	Shape shape;
-	
+
 	public void create() {
 
 	}
 
 	public void draw() {
-		
+
 	}
-	
+
 	@Override
 	public void color(Color color) {
 		System.out.println("color");
@@ -27,7 +27,7 @@ public abstract class ShapeCommand implements ShapeCommandInterface{
 			{
 				this.shape.setColor(color);
 			}
-		
+
 	}
 
 	@Override
@@ -46,5 +46,8 @@ public abstract class ShapeCommand implements ShapeCommandInterface{
 	public void move(int x, int y) {
 		System.out.println("move");
 
+		this.shape.setX(x);
+		this.shape.setY(y);
 	}
+
 }

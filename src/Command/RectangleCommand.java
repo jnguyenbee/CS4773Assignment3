@@ -6,7 +6,6 @@ import Builder.*;
 
 public class RectangleCommand extends ShapeCommand{
 
-	Shape shape;
 	private int width;
 	private int height;
 
@@ -29,7 +28,7 @@ public class RectangleCommand extends ShapeCommand{
 		System.out.println("draw");
 		System.out.printf("Rectangle, Color: %s, Origin: (%d, %d), Width: %d, Height: %d\n",
 			this.shape.getColor(), this.shape.getX(), this.shape.getY(), this.shape.getWidth(), this.shape.getHeight());
-		
+
 	}
 
 }
