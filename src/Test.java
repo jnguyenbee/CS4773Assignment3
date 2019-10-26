@@ -15,6 +15,7 @@ import Command.DeleteCommand;
 import Command.DrawCommand;
 import Command.MoveCommand;
 import Command.RectangleCommand;
+import Command.SelectCommand;
 import Command.ShapeCommandInterface;
 public class Test {
 
@@ -25,6 +26,7 @@ public class Test {
 		 BufferedReader br = new BufferedReader(new FileReader(file));
 		 ShapeCommandInterface shape = null;
 		 ArrayList<ShapeCommandInterface> drawingList = new ArrayList<ShapeCommandInterface>();
+
 		String line;
 		String [] parseCommand;
 		while((line = br.readLine())!= null)
@@ -42,7 +44,6 @@ public class Test {
 
 						shape = shapeCircle;
 					}
-
 					if(parseCommand[1].equals("RECTANGLE")) {
 						 ShapeCommandInterface shapeRect = new RectangleCommand(Integer.parseInt(parseCommand[2]), Integer.parseInt(parseCommand[3]));
 						 CreateCommand createRect = new CreateCommand(shapeRect);
@@ -50,18 +51,26 @@ public class Test {
 						 rectCreateInvoker.activate();
 
 						 shape = shapeRect;
-					}
 
+					}
 					drawingList.add(shape);
 					break;
 				case "SELECT":
-					shape = drawingList.get(Integer.parseInt(parseCommand[1])-1);
+					if(Integer.parseInt(parseCommand[1])-1 >= drawingList.size())
+					{
+						System.out.println("ERROR: invalid shape for SELECT");
+					}
+					else {
+						shape = drawingList.get(Integer.parseInt(parseCommand[1])-1);
+						SelectCommand select = new SelectCommand(shape);
+						CommandInvoker selectInvoker = new CommandInvoker(select);
+						selectInvoker.activate();
+					}
 					break;
 				case "MOVE":
 					MoveCommand move = new MoveCommand(shape,Integer.parseInt(parseCommand[1]), Integer.parseInt(parseCommand[2]));
 					CommandInvoker moveInvoker = new CommandInvoker(move);
 					moveInvoker.activate();
-
 					break;
 				case "DRAW":
 					DrawCommand draw = new DrawCommand(shape);
@@ -74,13 +83,12 @@ public class Test {
 					CommandInvoker colorInvoker = new CommandInvoker(color);
 					colorInvoker.activate();
 					break;
-				/*
 				case "DELETE":
-					DeleteCommand delete = new DeleteCommand(shape, drawingList);
-					i = new Invoker(delete);
-					i.activate();
+					DeleteCommand delete = new DeleteCommand(shape);
+					CommandInvoker deleteInvoker = new CommandInvoker(delete);
+					deleteInvoker.activate();
 					break;
-				*/
+
 				case "DRAWSCENE":
 					for(ShapeCommandInterface n : drawingList)
 					{
@@ -89,7 +97,5 @@ public class Test {
 					break;
 			}
 		}
-
-
 	 }
 }

@@ -14,5 +14,9 @@ public interface ShapeBuilder {
 
 	public void buildColor();
 
+	public void buildNoShape();
+
 	public Shape getShape();
+
+
 }

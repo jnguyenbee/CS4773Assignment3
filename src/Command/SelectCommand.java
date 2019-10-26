@@ -2,18 +2,17 @@ package Command;
 
 import java.util.ArrayList;
 
-public class DeleteCommand implements Command{
+public class SelectCommand  implements Command{
 
 	ShapeCommandInterface shape;
-	public DeleteCommand(ShapeCommandInterface shape) {
+	public SelectCommand(ShapeCommandInterface shape)
+	{
 		this.shape = shape;
-
 	}
-
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
-		shape.delete();
+		shape.select();
 	}
 
 	@Override

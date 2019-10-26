@@ -1,6 +1,7 @@
 package Command;
 
 import java.awt.Color;
+import java.util.ArrayList;
 
 public interface ShapeCommandInterface {
 
@@ -15,6 +16,8 @@ public interface ShapeCommandInterface {
 	public void undo();
 
 	public void move(int x, int y);
+
+	public void select();
 
 
 }
