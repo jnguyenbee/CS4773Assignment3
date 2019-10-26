@@ -12,13 +12,13 @@ public abstract class ShapeCommand implements ShapeCommandInterface{
 	Shape shape;
 	public CreateStrategy createType;
 	public DrawStrategy drawType;
-	
+
 	public void create() {}
 	public void draw() {}
 	public void tryToDraw() {
 		drawType.draw(shape);
 	}
-	
+
 
 	@Override
 	public void color(Color color) {

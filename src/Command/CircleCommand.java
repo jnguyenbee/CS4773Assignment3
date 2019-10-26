@@ -24,5 +24,5 @@ public class CircleCommand extends ShapeCommand{
 	public void draw() {
 		drawType = new DrawCircleStrategy();
 		tryToDraw();
-	}	
+	}
 }
