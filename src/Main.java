@@ -35,7 +35,7 @@ public class Main {
 		while((line = br.readLine())!= null)
 		{
 			parseCommand = line.split(" ");
-			if(flag == 0 ||  parseCommand[0].equals("SELECT")) {
+			if(flag == 0 ||  parseCommand[0].equals("SELECT") || parseCommand[0].equals("DRAWSCENE")) {
 
 			switch(parseCommand[0])
 			{
