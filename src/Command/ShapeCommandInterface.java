@@ -1,6 +1,7 @@
 package Command;
 
 import java.awt.Color;
+import Builder.Shape;
 import java.util.ArrayList;
 
 public interface ShapeCommandInterface {
@@ -18,5 +19,6 @@ public interface ShapeCommandInterface {
 	public void move(int x, int y);
 
 	public void select();
-	
+
+	public Shape getShape();
 }

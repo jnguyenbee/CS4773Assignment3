@@ -3,7 +3,7 @@ package Command;
 import java.awt.Color;
 
 import Builder.*;
-
+import Builder.Shape;
 
 public class CircleCommand extends ShapeCommand{
 
@@ -16,7 +16,6 @@ public class CircleCommand extends ShapeCommand{
 
 	@Override
 	public void create() {
-		System.out.println("create");
 		ShapeBuilder builder = new CircleBuilder(this.radius);
 		ShapeEngineer engineer = new ShapeEngineer(builder);
 		engineer.makeShape();
@@ -25,9 +24,10 @@ public class CircleCommand extends ShapeCommand{
 
 	@Override
 	public void draw() {
-		System.out.println("draw");
+		if(shape.getNoShape() != true) {
 		System.out.printf("Circle, Color: %s, Origin: (%d, %d), Radius: %d\n",
 				this.shape.getColor(), this.shape.getX(), this.shape.getY(), this.shape.getRadius());
+		}
 	}
 
 
