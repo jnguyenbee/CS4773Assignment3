@@ -25,31 +25,6 @@ public class Test {
 		 BufferedReader br = new BufferedReader(new FileReader(file));
 		 ShapeCommandInterface shape = null;
 		 ArrayList<ShapeCommandInterface> drawingList = new ArrayList<ShapeCommandInterface>();
-
-/*
-		 ShapeCommandInterface shapeTestC = new CircleCommand(25);
-		 CreateCommand createC = new CreateCommand(shapeTestC);
-		 CommandInvoker circleCreateInvoker = new CommandInvoker(createC);
-		 circleCreateInvoker.activate();
-
-		 ColorCommand colorc = new ColorCommand(shapeTestC,Color.YELLOW);
-		 CommandInvoker circleColorInvoker = new CommandInvoker(colorc);
-		 circleColorInvoker.activate();
-
-
-		 DrawCommand drawC = new DrawCommand(shapeTestC);
-		 CommandInvoker cD = new CommandInvoker(drawC);
-		 cD.activate();
-
-		 ShapeCommandInterface shapeTestR = new RectangleCommand(15,20);
-		 CreateCommand createR = new CreateCommand(shapeTestR);
-		 CommandInvoker rI = new CommandInvoker(createR);
-		 rI.activate();
-
-		 DrawCommand drawR = new DrawCommand(shapeTestR);
-		 CommandInvoker rD = new CommandInvoker(drawR);
-		 rD.activate();
-*/
 		String line;
 		String [] parseCommand;
 		while((line = br.readLine())!= null)
